@@ -17,23 +17,13 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
-void MainWindow::on_btnCalculate_clicked()
+void MainWindow::on_txtExpression_textChanged(QString const& txt)
 {
-//    QDBusReply<QString> reply;
-//    reply = m_iface.call("compute", ui->txtExpression->text());
-
-//    if (reply.isValid()) {
-//        ui->txtResult->setText(reply.value());
-//    }
-//    else {
-//        qDebug() << "caclulate not call!";
-//    }
-
-    QDBusReply<double> reply;
-    reply = m_iface.call("test", 5);
+    QDBusReply<QString> reply;
+    reply = m_iface.call("compute", txt);
 
     if (reply.isValid()) {
-        qDebug() << reply.value();
+        ui->txtResult->setText(reply.value());
     }
     else {
         qDebug() << "caclulate not call!";

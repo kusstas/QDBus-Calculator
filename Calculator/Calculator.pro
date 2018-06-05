@@ -23,4 +23,3 @@ HEADERS += \
     calculator.h
 
 DBUS_ADAPTORS += org.kusstas.ICalculator.xml
-DBUS_INTERFACES += org.kusstas.ICalculator.xml

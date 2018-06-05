@@ -17,7 +17,8 @@ public:
     ~MainWindow();
 
 private slots:
-    void on_btnCalculate_clicked();
+
+    void on_txtExpression_textChanged(QString const& txt);
 
 private:
     Ui::MainWindow* ui;
